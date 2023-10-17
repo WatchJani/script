@@ -11,12 +11,8 @@ import (
 	"strings"
 )
 
-//get the go version
-//if not exist install
-//if exist check this version
-
 const (
-	DOWNLOAD_DIRECTORY = "/usr/local" //
+	DOWNLOAD_DIRECTORY = "/usr/local/" //
 	BASH_PATH          = "/home/janko/.bashrc"
 	LINE_TO_ADD        = "export PATH=$PATH:/usr/local/go/bin"
 )
@@ -140,7 +136,7 @@ func GetFile(path string) string {
 }
 
 func Extract(dir string) error {
-	cmd := exec.Command("tar", "-xzvf", DOWNLOAD_DIRECTORY+dir)
+	cmd := exec.Command("sudo", "tar", "-xzvf", DOWNLOAD_DIRECTORY+dir)
 
 	cmd.Dir = DOWNLOAD_DIRECTORY
 
